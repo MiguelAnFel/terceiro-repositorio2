@@ -58,9 +58,6 @@ function geraSenha() {
 }
 
 function classificaSenha(tamanhoAlfabeto) {
-    const valorEntropia = document.querySelector('.entropia')
-    valorEntropia.textContent = 2**Math.floor(entropia)/(100e6*60*60*24);
-    let entropia = tamanhoSenha*Math.LOG2E(tamanhoAlfabeto);
     console.log(entropia);
     forcaSenha.classList.remove('fraca', 'media', 'forte')
     if (entropia>57){
@@ -70,4 +67,7 @@ function classificaSenha(tamanhoAlfabeto) {
     } else if (entropia<=35){
         forcaSenha.classList.add('fraca');
     }
+    const valorEntropia = document.querySelector('.entropia')
+    valorEntropia.textContent = 2**Math.floor(entropia)/(100e6*60*60*24);
+    let entropia = tamanhoSenha*Math.LOG2E(tamanhoAlfabeto);
 }
